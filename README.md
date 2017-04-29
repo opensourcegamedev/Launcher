@@ -1,2 +1,2 @@
-# spacechaos-javafx-launcher
-Launcher for SpaceChaos project
+# Launcher
+A JavaFx-based launcher for SpaceChaos.
