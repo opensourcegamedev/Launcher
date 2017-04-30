@@ -46,11 +46,11 @@ public class ImageSlider {
         gc.setStroke(Color.WHITE);
         gc.setFont(new Font("arial", 16));
 
-        gc.clearRect(0, 0, 1024, 512);
-        gc.drawImage(images.get(0), 0, 0, 1024, 512);
+        gc.drawImage(images.get(0), 0, 0, 1024, 400);
         gc.setFill(Color.gray(0.0, 0.7));
-        gc.fillRect(0, 320, 1024, 196);
-        gc.strokeText(notes.get(0), 32, 352);
+        gc.fillRect(0, 300, 1024, 100);
+        gc.setFill(Color.WHITE);
+        gc.fillText(notes.get(0), 32, 325);
 
         sliderThread = new AnimationTimer() {
             private int currentPicture = 1;
@@ -68,7 +68,7 @@ public class ImageSlider {
                 }else if(changingStatus == 1 && (now - lastChange) / 1000000 > 32){
                     drawSimpleThings();
                     gc.setFill(Color.gray(1, changingRound  / 40.0));
-                    gc.fillRect(0, 0, 1024, 512);
+                    gc.fillRect(0, 0, 1024, 400);
                     ++changingRound;
                     if(changingRound == 39){
                         changingStatus = 2;
@@ -81,7 +81,7 @@ public class ImageSlider {
                 }else if(changingStatus == 2 && (now - lastChange) / 1000000 > 32){
                     drawSimpleThings();
                     gc.setFill(Color.gray(1, changingRound / 40.0));
-                    gc.fillRect(0, 0, 1024, 512);
+                    gc.fillRect(0, 0, 1024, 400);
                     --changingRound;
                     if(changingRound == 0){
                         changingStatus = 0;
@@ -91,11 +91,12 @@ public class ImageSlider {
             }
 
             private void drawSimpleThings(){
-                gc.clearRect(0, 0, 1024, 512);
-                gc.drawImage(images.get(currentPicture -1), 0, 0, 1024, 512);
+                gc.clearRect(0, 0, 1024, 400);
+                gc.drawImage(images.get(currentPicture-1), 0, 0, 1024, 400);
                 gc.setFill(Color.gray(0.0, 0.7));
-                gc.fillRect(0, 320, 1024, 196);
-                gc.strokeText(notes.get(currentPicture -1), 32, 352);
+                gc.fillRect(0, 300, 1024, 100);
+                gc.setFill(Color.WHITE);
+                gc.fillText(notes.get(currentPicture-1), 32, 325);
             }
         };
         draw();

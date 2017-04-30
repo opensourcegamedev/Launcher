@@ -5,11 +5,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.GridPane?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="spacechaos.launcher.gui.ImageSlider">
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="spacechaos.launcher.gui.ImageSlider" maxWidth="1024" maxHeight="425" prefHeight="425.0">
 
-    <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+    <padding><Insets bottom="10" left="25" right="25" top="10" /></padding>
 
     <Canvas fx:id="imageCanvas" width="1024" height="400"/>
 </GridPane>

@@ -2,9 +2,7 @@ package spacechaos.launcher;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -24,7 +22,7 @@ public class Main extends Application {
 
 
         VBox root = FXMLLoader.load(new URL("file:core/src/main/resources/fxml/menu.fxml"));
-        root.getChildren().add(1, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
+        root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
         primaryStage.setTitle("SpaceChaos Launcher");
         primaryStage.getIcons().add(new Image("file:data/images/logo_square.jpg"));
         primaryStage.setScene(new Scene(root, 1100, 700));

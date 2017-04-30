@@ -1,20 +1,19 @@
 package spacechaos.launcher.gui;
 
-import javafx.animation.AnimationTimer;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
+import javafx.scene.layout.VBox;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.IOException;
+import java.net.URL;
+
 
 public class MenuController {
+
+    @FXML private VBox root;
     @FXML private Button settingsButton;
 
     @FXML private void initialize() {
@@ -22,4 +21,22 @@ public class MenuController {
     }
 
     @FXML private void settings(){}
+
+    @FXML protected void showCredits(ActionEvent e){
+        root.getChildren().remove(2);
+        try {
+            root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/credits.fxml")));
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    @FXML protected void showImageSlider(){
+        root.getChildren().remove(2);
+        try {
+            root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane maxHeight="425.0" maxWidth="1024.0" minHeight="425.0" minWidth="1024.0" prefHeight="425.0" prefWidth="1024.0"
+          xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacechaos.launcher.gui.CreditsController">
+
+    <ScrollPane prefHeight="400.0" prefWidth="1024.0">
+        <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+
+        <VBox prefHeight="200.0" prefWidth="900.0" fx:id="creditsPane" alignment="TOP_CENTER" spacing="20"/>
+    </ScrollPane>
+</GridPane>
