@@ -1,6 +1,5 @@
 package spacechaos.launcher.gui;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -13,6 +12,8 @@ import java.net.URL;
 
 public class MenuController {
 
+    private boolean settingsShown = false;
+
     @FXML private VBox root;
     @FXML private Button settingsButton;
 
@@ -20,23 +21,29 @@ public class MenuController {
         settingsButton.setGraphic(new ImageView("file:data/images/settings.png"));
     }
 
-    @FXML private void settings(){}
-
-    @FXML protected void showCredits(ActionEvent e){
-        root.getChildren().remove(2);
-        try {
-            root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/credits.fxml")));
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
-
-    @FXML protected void showImageSlider(){
-        root.getChildren().remove(2);
-        try {
-            root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
-        } catch (IOException e1) {
-            e1.printStackTrace();
+    @FXML protected void showSettings(){
+        if(!settingsShown){
+            root.getChildren().remove(1, 4);
+            try {
+                root.getChildren().add(FXMLLoader.load(new URL("file:core/src/main/resources/fxml/settings.fxml")));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            settingsShown = true;
+            settingsButton.setGraphic(null);
+            settingsButton.setText("Back");
+        }else{
+            root.getChildren().remove(1);
+            try {
+                root.getChildren().add(1, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/infoMenu.fxml")));
+                root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
+                root.getChildren().add(3, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/start.fxml")));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            settingsShown = false;
+            settingsButton.setText("");
+            settingsButton.setGraphic(new ImageView("file:data/images/settings.png"));
         }
     }
 }

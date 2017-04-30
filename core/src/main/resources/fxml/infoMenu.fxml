@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<HBox alignment="CENTER" spacing="100" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="spacechaos.launcher.gui.InfoMenu" fx:id="root">
+    <padding><Insets bottom="25" left="25" right="25" /></padding>
+    <Button minHeight="64" minWidth="300" onAction="#showImageSlider" text="News" />
+    <Button minHeight="64" minWidth="300" onAction="#showCredits" text="Credits" />
+</HBox>

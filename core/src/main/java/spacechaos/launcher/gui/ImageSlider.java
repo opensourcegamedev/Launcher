@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Created by Constantin on 29.04.2017.
+ * @author Constantin Schulte
  */
 public class ImageSlider {
     public final static int PICTURE_NUMBERS = 2;
@@ -29,8 +29,8 @@ public class ImageSlider {
     private ArrayList<Image> images;
 
     @FXML private void initialize() {
-        notes = new ArrayList<String>();
-        images = new ArrayList<Image>();
+        notes = new ArrayList<>();
+        images = new ArrayList<>();
 
         for(int number = 1; number <= PICTURE_NUMBERS; ++number){
             try(Scanner scanner = new Scanner(new File("./data/news_data/notes/note_" + number + ".txt"))){
@@ -104,9 +104,5 @@ public class ImageSlider {
 
     private void draw() {
         sliderThread.start();
-    }
-
-    @FXML private void settings(){
-
     }
 }

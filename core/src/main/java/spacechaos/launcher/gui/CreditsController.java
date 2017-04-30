@@ -6,6 +6,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import spacechaos.launcher.Main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,13 +17,14 @@ import java.util.Scanner;
  * @author Constantin Schulte
  */
 public class CreditsController {
-    public static final int CREDITS_NUMBER = 5;
+    public static final int CREDITS_NUMBER = 6;
 
     private ArrayList<Canvas> creditsEntries;
 
     @FXML private VBox creditsPane;
 
     @FXML private void initialize(){
+        creditsPane.setFocusTraversable(false);
         creditsEntries = new ArrayList<Canvas>();
 
         for(int number = 1; number <= CREDITS_NUMBER; ++number){
@@ -40,6 +42,15 @@ public class CreditsController {
                 gc.fillText(scanner.nextLine(), 20, 40);
                 gc.setFont(new Font("arial", 22));
                 gc.fillText(scanner.nextLine(), 20, 70);
+                if(scanner.hasNextLine()){
+                    gc.setFill(Color.DARKBLUE);
+                    gc.setFont(new Font("arial", 32));
+                    gc.fillText(scanner.nextLine(), 500, 40 );
+                    final String site = scanner.nextLine();
+                    creditCanvas.setOnMouseClicked(e->{
+                        Main.hostServices.showDocument(site);
+                    });
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
