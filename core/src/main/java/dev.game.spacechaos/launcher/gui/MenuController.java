@@ -1,4 +1,4 @@
-package spacechaos.launcher.gui;
+package dev.game.spacechaos.launcher.gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

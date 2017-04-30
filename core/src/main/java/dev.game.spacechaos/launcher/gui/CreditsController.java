@@ -1,12 +1,12 @@
-package spacechaos.launcher.gui;
+package dev.game.spacechaos.launcher.gui;
 
+import dev.game.spacechaos.launcher.Main;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
-import spacechaos.launcher.Main;
 
 import java.io.File;
 import java.io.FileNotFoundException;

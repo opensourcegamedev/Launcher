@@ -1,4 +1,4 @@
-package spacechaos.launcher.config;
+package dev.game.spacechaos.launcher.config;
 
 import java.io.File;
 import java.io.IOException;

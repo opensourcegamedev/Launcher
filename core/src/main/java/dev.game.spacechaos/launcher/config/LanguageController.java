@@ -1,4 +1,4 @@
-package spacechaos.launcher.config;
+package dev.game.spacechaos.launcher.config;
 
 import java.util.HashMap;
 import java.util.Locale;
