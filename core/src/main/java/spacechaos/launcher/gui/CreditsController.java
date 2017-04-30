@@ -1,6 +1,6 @@
-package dev.game.spacechaos.launcher.gui;
+package spacechaos.launcher.gui;
 
-import dev.game.spacechaos.launcher.Main;
+import spacechaos.launcher.Main;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

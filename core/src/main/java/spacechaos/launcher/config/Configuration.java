@@ -1,4 +1,4 @@
-package dev.game.spacechaos.launcher.config;
+package spacechaos.launcher.config;
 
 import java.io.File;
 import java.io.FileInputStream;

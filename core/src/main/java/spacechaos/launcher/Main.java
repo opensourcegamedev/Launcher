@@ -1,9 +1,9 @@
-package dev.game.spacechaos.launcher;
+package spacechaos.launcher;
 
 import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
 import com.sun.javafx.application.HostServicesDelegate;
-import dev.game.spacechaos.launcher.config.Configuration;
-import dev.game.spacechaos.launcher.config.LanguageController;
+import spacechaos.launcher.config.Configuration;
+import spacechaos.launcher.config.LanguageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

@@ -1,4 +1,4 @@
-package dev.game.spacechaos.launcher.gui;
+package spacechaos.launcher.gui;
 
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
