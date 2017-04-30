@@ -19,7 +19,7 @@ ext {
     gameNetworkLibVersion = '1.0.6-SNAPSHOT'
     apacheCommonsLangVersion = '3.5'
 
-    mainClassName = "com.jukusoft.libgdx.rpg.desktop.DesktopLauncher"
+    mainClassName = "dev.game.spacechaos.launcher.Main"
 }
 
 repositories {
