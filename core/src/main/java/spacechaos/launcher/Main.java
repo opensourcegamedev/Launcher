@@ -1,7 +1,5 @@
 package spacechaos.launcher;
 
-import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
-import com.sun.javafx.application.HostServicesDelegate;
 import spacechaos.launcher.config.Configuration;
 import spacechaos.launcher.config.LanguageController;
 import javafx.application.Application;
@@ -14,12 +12,10 @@ import javafx.stage.Stage;
 import java.net.URL;
 
 public class Main extends Application {
-    public static HostServicesDelegate hostServices;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         Configuration config = new Configuration();
-        config.load();
 
         LanguageController langController = new LanguageController(config.getConfiguration("language"));
 
@@ -32,7 +28,6 @@ public class Main extends Application {
         primaryStage.getIcons().add(new Image("file:data/images/logo_square.jpg"));
         primaryStage.setScene(new Scene(root, 1100, 700));
         primaryStage.show();
-        hostServices = HostServicesFactory.getInstance(this);
     }
 
 

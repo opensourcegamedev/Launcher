@@ -1,31 +1,19 @@
 package spacechaos.launcher.config;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
-public class Configuration {
+/**
+ * @author Constantin Schulte
+ */
+public class Settings {
     private Properties prop;
     private FileInputStream stream;
 
-    public Configuration(){
+    public Settings(String path){
+        path = "./core/src/main/resources/" + path;
         prop = new Properties();
         stream = null;
-
-        init();
-    }
-
-    private void init(){
-        String path = "./data/config.properties";
-        File config = new File(path);
-        if(!config.exists()){
-            AppConfig startUp = new AppConfig();
-            startUp.activate();
-        }
-
         load(path);
     }
 
@@ -50,17 +38,15 @@ public class Configuration {
         }
     }
 
-    public void changeConfiguration(String key, String newValue){
+    public void changeConfiguration(String key, String newValue, String path){
         FileOutputStream out = null;
+        path = "./core/src/main/resources/" + path;
         try {
-            String path = "./data/config.properties";
             File file = new File(path);
             out = new FileOutputStream(file);
             prop.setProperty(key, newValue);
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        } catch (FileNotFoundException e) {e.printStackTrace();}
 
         try {
             prop.store(out, null);
