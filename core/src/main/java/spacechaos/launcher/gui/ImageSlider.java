@@ -13,26 +13,30 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import spacechaos.launcher.config.Settings;
+
 /**
+ * Controller for an ImageSlider which shows different pictures and notes
+ *
  * @author Constantin Schulte
+ * @version 0.1
  */
 public class ImageSlider {
-    public final static int PICTURE_NUMBERS = 2;
-
-    @FXML
-    private Canvas imageCanvas;
+    @FXML private Canvas imageCanvas;
 
     private GraphicsContext gc;
     private AnimationTimer sliderThread;
 
     private ArrayList<String> notes;
     private ArrayList<Image> images;
+    private int pictureNumbers;
 
     @FXML private void initialize() {
+        pictureNumbers = Integer.parseInt(new Settings("news_data/newsData.properties").getConfiguration("pictureNumbers"));
         notes = new ArrayList<>();
         images = new ArrayList<>();
 
-        for(int number = 1; number <= PICTURE_NUMBERS; ++number){
+        for(int number = 1; number <= pictureNumbers; ++number){
             try(Scanner scanner = new Scanner(new File("./data/news_data/notes/note_" + number + ".txt"))){
                 notes.add(scanner.nextLine());
                 images.add(new Image("file:data/news_data/images/image_" + number + ".png"));
@@ -73,7 +77,7 @@ public class ImageSlider {
                     if(changingRound == 39){
                         changingStatus = 2;
                         ++currentPicture;
-                        if(currentPicture > PICTURE_NUMBERS){
+                        if(currentPicture > pictureNumbers){
                             currentPicture = 1;
                         }
                     }

@@ -1,6 +1,5 @@
 package spacechaos.launcher.gui;
 
-import spacechaos.launcher.Main;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -18,22 +17,18 @@ import java.util.Scanner;
  * @author Constantin Schulte
  */
 public class CreditsController {
-    private int creditsAmount;
-
-    private ArrayList<Canvas> creditsEntries;
-    private Settings creditsSettings;
 
     @FXML private VBox creditsPane;
 
     @FXML private void initialize(){
-        creditsSettings = new Settings("credits/credits.properties");
-        creditsAmount = Integer.parseInt(creditsSettings.getConfiguration("amount"));
+        Settings creditsSettings = new Settings("credits/credits.properties");
+        int creditsAmount = Integer.parseInt(creditsSettings.getConfiguration("amount"));
         creditsPane.setFocusTraversable(false);
-        creditsEntries = new ArrayList<Canvas>();
+        ArrayList<Canvas> creditsEntries = new ArrayList<Canvas>();
 
         for(int number = 1; number <= creditsAmount; ++number){
             Canvas creditCanvas = new Canvas(900, 100);
-            try(Scanner scanner = new Scanner(new File("./core/src/main/resources/credits/credits_" + number + ".txt"))){
+            try(Scanner scanner = new Scanner(new File("./data/credits/credits_" + number + ".txt"))){
                 GraphicsContext gc = creditCanvas.getGraphicsContext2D();
                 gc.setFill(Color.WHITE);
                 gc.setStroke(Color.gray(0.5));

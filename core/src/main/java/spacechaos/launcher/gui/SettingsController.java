@@ -15,6 +15,6 @@ public class SettingsController {
     }
 
     @FXML private void chooseLanguage(){
-
+        ChooseLanguage languageChooser = new ChooseLanguage();
     }
 }

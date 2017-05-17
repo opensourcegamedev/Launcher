@@ -21,7 +21,7 @@ public class InfoMenu {
         rooter = (VBox)root.getParent();
         rooter.getChildren().remove(2);
         try {
-            rooter.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/credits.fxml")));
+            rooter.getChildren().add(2, FXMLLoader.load(new URL("file:data/fxml/credits.fxml")));
         } catch (IOException e1) {
             e1.printStackTrace();
         }
@@ -31,7 +31,7 @@ public class InfoMenu {
         rooter = (VBox)root.getParent();
         rooter.getChildren().remove(2);
         try {
-            rooter.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
+            rooter.getChildren().add(2, FXMLLoader.load(new URL("file:data/fxml/newsCanvas.fxml")));
         } catch (IOException e1) {
             e1.printStackTrace();
         }

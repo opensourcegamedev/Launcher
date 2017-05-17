@@ -4,43 +4,35 @@ import java.io.*;
 import java.util.Properties;
 
 /**
+ * An object to load any *.properties-File into a Properties-object.
+ *
  * @author Constantin Schulte
+ * @version 0.1
  */
 public class Settings {
     private Properties prop;
-    private FileInputStream stream;
+    private String path;
 
     public Settings(String path){
-        path = "./core/src/main/resources/" + path;
+        this.path = "./data/" + path;
         prop = new Properties();
-        stream = null;
-        load(path);
+        load();
+    }
+
+    private void load(){
+        try(FileInputStream stream = new FileInputStream(path);) {
+            prop.load(stream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getConfiguration(String key){
         return prop.getProperty(key);
     }
 
-    private void load(String path){
-        try {
-            stream = new FileInputStream(path);
-            prop.load(stream);
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (stream != null) {
-                try {
-                    stream.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-
-    public void changeConfiguration(String key, String newValue, String path){
+    public void changeConfiguration(String key, String newValue){
         FileOutputStream out = null;
-        path = "./core/src/main/resources/" + path;
         try {
             File file = new File(path);
             out = new FileOutputStream(file);

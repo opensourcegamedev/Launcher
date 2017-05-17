@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="spacechaos.launcher.gui.ChooseLanguageController" vgap="64" hgap="64">
+
+    <padding><Insets top="96" bottom="96" left="128" right="128"/></padding>
+
+    <Text text="Choose your preferred language." GridPane.rowIndex="0" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+    <ComboBox fx:id="languages" promptText="Language" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+
+    <Button text="Choose" onAction="#choose" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+</GridPane>

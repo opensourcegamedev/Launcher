@@ -25,7 +25,7 @@ public class MenuController {
         if(!settingsShown){
             root.getChildren().remove(1, 4);
             try {
-                root.getChildren().add(FXMLLoader.load(new URL("file:core/src/main/resources/fxml/settings.fxml")));
+                root.getChildren().add(FXMLLoader.load(new URL("file:data/fxml/settings.fxml")));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -35,9 +35,9 @@ public class MenuController {
         }else{
             root.getChildren().remove(1);
             try {
-                root.getChildren().add(1, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/infoMenu.fxml")));
-                root.getChildren().add(2, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/newsCanvas.fxml")));
-                root.getChildren().add(3, FXMLLoader.load(new URL("file:core/src/main/resources/fxml/start.fxml")));
+                root.getChildren().add(1, FXMLLoader.load(new URL("file:data/fxml/infoMenu.fxml")));
+                root.getChildren().add(2, FXMLLoader.load(new URL("file:data/fxml/newsCanvas.fxml")));
+                root.getChildren().add(3, FXMLLoader.load(new URL("file:data/fxml/start.fxml")));
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="root" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacechaos.launcher.gui.MenuController">
+<VBox fx:id="root" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spacechaos.launcher.gui.MenuController">
 
     <padding><Insets bottom="10" /></padding>
 
     <GridPane alignment="CENTER" hgap="100" vgap="100">
         <ImageView x="80" y="1100" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
-            <Image requestedHeight="80" requestedWidth="1100" url="@../../../../../data/images/logo.jpg" />
+            <Image requestedHeight="80" requestedWidth="1100" url="@../images/logo.jpg" />
         </ImageView>
 
         <Button fx:id="settingsButton" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#showSettings"/>
