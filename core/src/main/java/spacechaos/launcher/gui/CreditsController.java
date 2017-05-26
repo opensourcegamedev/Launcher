@@ -24,7 +24,7 @@ public class CreditsController {
         Settings creditsSettings = new Settings("credits/credits.properties");
         int creditsAmount = Integer.parseInt(creditsSettings.getConfiguration("amount"));
         creditsPane.setFocusTraversable(false);
-        ArrayList<Canvas> creditsEntries = new ArrayList<Canvas>();
+        ArrayList<Canvas> creditsEntries = new ArrayList<>();
 
         for(int number = 1; number <= creditsAmount; ++number){
             Canvas creditCanvas = new Canvas(900, 100);
@@ -46,8 +46,7 @@ public class CreditsController {
                     gc.setFont(new Font("arial", 32));
                     gc.fillText(scanner.nextLine(), 500, 40 );
                     final String site = scanner.nextLine();
-                    creditCanvas.setOnMouseClicked(e->{
-                    });
+                    creditCanvas.setOnMouseClicked(e-> System.out.println(site));
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

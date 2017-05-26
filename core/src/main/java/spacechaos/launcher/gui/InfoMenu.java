@@ -9,7 +9,10 @@ import java.io.IOException;
 import java.net.URL;
 
 /**
+ * Controls the main panel in the start screen.
+ *
  * @author Constantin Schulte
+ * @version 0.1
  */
 public class InfoMenu {
 

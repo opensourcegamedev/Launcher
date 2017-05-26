@@ -9,7 +9,12 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.net.URL;
 
-
+/**
+ * Controller for the menu in the upper half of the Start-Screen.
+ *
+ * @author Constantin Schulte
+ * @version 0.1
+ */
 public class MenuController {
 
     private boolean settingsShown = false;

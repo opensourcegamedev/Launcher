@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+          fx:controller="spacechaos.launcher.gui.VersionsMenuController" prefWidth="1000" prefHeight="500" alignment="CENTER">
+    <padding><Insets top="50" bottom="100" left="50" right="50"/></padding>
+    <ScrollPane prefHeight="500" prefWidth="1000" minHeight="500">
+        <VBox fx:id="versionsPane" spacing="30" alignment="CENTER">
+            <padding><Insets top="30" right="30" left="30" bottom="30"/></padding>
+        </VBox>
+    </ScrollPane>
+</GridPane>

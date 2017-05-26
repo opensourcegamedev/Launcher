@@ -19,11 +19,13 @@ import java.net.URL;
  */
 public class Main extends Application {
 
+    private static LanguageController langController;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Settings setup = new Settings("setup.properties");
         Settings config = new Settings("config.properties");
-        LanguageController langController = new LanguageController(config.getConfiguration("language"));
+        langController = new LanguageController(config.getConfiguration("language"));
 
         VBox root = FXMLLoader.load(new URL("file:data/fxml/menu.fxml"));
         root.getChildren().add(1, FXMLLoader.load(new URL("file:data/fxml/infoMenu.fxml")));
@@ -35,6 +37,9 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    public static LanguageController getLangController(){
+        return langController;
+    }
 
     public static void main(String[] args) {
         launch(args);

@@ -20,7 +20,7 @@ public class Settings {
     }
 
     private void load(){
-        try(FileInputStream stream = new FileInputStream(path);) {
+        try(FileInputStream stream = new FileInputStream(path)) {
             prop.load(stream);
         } catch (IOException e) {
             e.printStackTrace();
@@ -31,16 +31,17 @@ public class Settings {
         return prop.getProperty(key);
     }
 
-    public void changeConfiguration(String key, String newValue){
+    public void changeConfiguration(String newValue){
         FileOutputStream out = null;
         try {
             File file = new File(path);
             out = new FileOutputStream(file);
-            prop.setProperty(key, newValue);
+            prop.setProperty("language", newValue);
 
         } catch (FileNotFoundException e) {e.printStackTrace();}
 
         try {
+            assert out != null;
             prop.store(out, null);
         } catch (IOException e) {
             e.printStackTrace();

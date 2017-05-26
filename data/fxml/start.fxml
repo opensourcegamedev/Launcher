@@ -12,7 +12,7 @@
 
     <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
 
-    <ComboBox  layoutX="15.0" layoutY="33.0" prefWidth="256.0" promptText="Version">
+    <ComboBox fx:id="versionsBox" layoutX="15.0" layoutY="33.0" prefWidth="256.0" promptText="Version">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="v1.0.0 Pre-Alpha" />
@@ -20,5 +20,5 @@
         </items>
     </ComboBox>
 
-    <Button prefHeight="64" prefWidth="512.0" text="Start" onAction="#startGame"/>
+    <Button fx:id="startButton" prefHeight="64" prefWidth="512.0" text="Start" onAction="#startGame"/>
 </HBox>

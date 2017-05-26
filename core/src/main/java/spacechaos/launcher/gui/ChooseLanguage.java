@@ -15,8 +15,9 @@ import java.net.URL;
  * @version 0.1
  */
 class ChooseLanguage {
+    private Stage chooseStage;
     ChooseLanguage(){
-        Stage chooseStage = new Stage();
+        chooseStage = new Stage();
         chooseStage.setTitle("LanguageChooser");
         chooseStage.getIcons().add(new Image("file:data/images/logo_square.jpg"));
         try {
@@ -25,6 +26,9 @@ class ChooseLanguage {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    void activate(){
         chooseStage.show();
     }
 }

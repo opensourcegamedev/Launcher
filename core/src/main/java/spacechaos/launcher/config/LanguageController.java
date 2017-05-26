@@ -9,7 +9,7 @@ import java.util.*;
  * @version 0.1
  */
 public class LanguageController {
-    //ToDo Create a single list for the suppportedLanguages and the and the returned supported languages.
+    //ToDo Create a single list for the supported Languages and the and the returned supported languages.
     private static ArrayList<String> supported = new ArrayList<>();
     private ResourceBundle translation;
 
