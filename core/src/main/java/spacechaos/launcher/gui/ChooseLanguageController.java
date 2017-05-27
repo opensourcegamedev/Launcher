@@ -21,7 +21,7 @@ public class ChooseLanguageController {
 
     @FXML private void choose(){
         if(!languages.getValue().equals("Language")){
-            new Settings("config.properties").changeConfiguration(languages.getValue());
+            new Settings("config.properties").changeConfiguration("language", languages.getValue());
         }
     }
 }

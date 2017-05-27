@@ -1,6 +1,5 @@
 package spacechaos.launcher.gui;
 
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -8,6 +7,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import spacechaos.launcher.Main;
 import spacechaos.launcher.config.Settings;
 
 import java.io.File;
@@ -53,13 +53,13 @@ public class VersionsMenuController {
 
             if(installed){
                 gc.setStroke(Color.GREENYELLOW);
-                gc.strokeLine(850, 50, 860, 60);
-                gc.strokeLine(860, 60, 875, 35);
+                gc.strokeLine(835, 50, 845, 60);
+                gc.strokeLine(845, 60, 865, 35);
             }else {
                 gc.clearRect(820, 35, 60, 30);
                 gc.setFont(Font.font(16));
                 gc.setLineWidth(2);
-                gc.fillText("Install", 830, 55);
+                gc.fillText(Main.getLangController().getString("install"), 825, 55, 50);
                 gc.strokeRoundRect(820, 35, 60, 30, 5, 5);
 
                 versionCanvas.setOnMouseClicked(e->{

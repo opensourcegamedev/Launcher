@@ -9,6 +9,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import spacechaos.launcher.config.Settings;
 
+import java.io.File;
 import java.net.URL;
 
 /**
@@ -24,6 +25,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Settings setup = new Settings("setup.properties");
+        setup.changeConfiguration("path", new File(".").getAbsolutePath().replace(".", ""));
         Settings config = new Settings("config.properties");
         langController = new LanguageController(config.getConfiguration("language"));
 

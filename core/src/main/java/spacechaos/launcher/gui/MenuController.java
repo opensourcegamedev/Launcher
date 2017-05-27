@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import spacechaos.launcher.Main;
 
 import java.io.IOException;
 import java.net.URL;
@@ -36,7 +37,7 @@ public class MenuController {
             }
             settingsShown = true;
             settingsButton.setGraphic(null);
-            settingsButton.setText("Back");
+            settingsButton.setText(Main.getLangController().getString("back"));
         }else{
             root.getChildren().remove(1);
             try {

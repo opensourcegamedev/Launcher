@@ -31,12 +31,12 @@ public class Settings {
         return prop.getProperty(key);
     }
 
-    public void changeConfiguration(String newValue){
+    public void changeConfiguration( String key, String newValue){
         FileOutputStream out = null;
         try {
             File file = new File(path);
             out = new FileOutputStream(file);
-            prop.setProperty("language", newValue);
+            prop.setProperty(key, newValue);
 
         } catch (FileNotFoundException e) {e.printStackTrace();}
 
